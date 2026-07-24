@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لعبة X-O</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* تنسيق خاص بصفحة اللعبة */
+        .game-container {
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 10px;
+            justify-content: center;
+            margin: 20px auto;
+        }
+
+        .cell {
+            background-color: #2f3542;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            user-select: none;
+        }
+
+        .cell:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>❌⭕ لعبة X - O</h1>
+        </div>
+        <nav>
+            <a href="index.html" class="btn">الرجوع للرئيسية</a>
+        </nav>
+    </header>
+
+    <main class="game-container">
+        <h2>تحدى صديقك الآن!</h2>
+        <p>اللاعب الأول: <span style="color:#ff4757; font-weight:bold;">X</span> | اللاعب الثاني: <span style="color:#2ed573; font-weight:bold;">O</span></p>
+
+        <!-- شبكة المربعات لتشغيل اللعبة -->
+        <div class="board">
+            <div class="cell" onclick="handleCellClick(event, 0)"></div>
+            <div class="cell" onclick="handleCellClick(event, 1)"></div>
+            <div class="cell" onclick="handleCellClick(event, 2)"></div>
+            <div class="cell" onclick="handleCellClick(event, 3)"></div>
+            <div class="cell" onclick="handleCellClick(event, 4)"></div>
+            <div class="cell" onclick="handleCellClick(event, 5)"></div>
+            <div class="cell" onclick="handleCellClick(event, 6)"></div>
+            <div class="cell" onclick="handleCellClick(event, 7)"></div>
+            <div class="cell" onclick="handleCellClick(event, 8)"></div>
+        </div>
+
+        <button onclick="restartGame()" class="btn" style="background-color: #ffa502; margin-top: 10px;">إعادة اللعب 🔄</button>
+    </main>
+    <!-- ربط كود اللعبة التفاعلي -->
+    <script src="game.js"></script>
+
+</body>
+</html>
